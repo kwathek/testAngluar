@@ -20,7 +20,13 @@ const appRoutes: Routes = [
     canActivate: [AuthGuard],
     component: LoginPage2Component
   },
-  { path: '**', redirectTo: 'login' }
+  {
+    path: 'Acceuil',
+    canActivate: [AuthGuard],
+    component: AccueilComponent
+  },
+  { path: '', component: LoginComponent },
+  { path: '**', redirectTo: 'Acceuil' }
 ];
 
 @NgModule({
@@ -36,7 +42,7 @@ const appRoutes: Routes = [
     RouterModule.forRoot(appRoutes),
     HttpClientModule,
   ],
-  providers: [AuthService,AuthGuard],
+  providers: [AuthService, AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
