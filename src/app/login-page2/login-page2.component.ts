@@ -30,4 +30,7 @@ export class LoginPage2Component implements OnInit {
   valider() {
     this.router.navigateByUrl('/');
   }
+  retour() {
+    this.router.navigateByUrl('/');
+  }
 }
