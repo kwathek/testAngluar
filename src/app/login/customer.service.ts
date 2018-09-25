@@ -14,4 +14,7 @@ export class CustomerService {
   isLogged() {
     return localStorage.getItem(TOKEN) != null;
   }
+  isLoggedOut() {
+    localStorage.clear();
+  }
 }
