@@ -32,10 +32,11 @@
       <!-- Condition sur le checkbox si l'utilisateur a fait un scroll -->
       <input class="form-check-input"  type="checkbox" *ngIf="disabled === 'false' " [disabled]="false" data-md-icheck (change)="toggleVisibility($event)">
       <input class="form-check-input"  type="checkbox" *ngIf="disabled === 'true' " [disabled]="true" ng-model="checked">
-    </label> Accepter les conditions générales
+    </label> J'accepte
     </div>
     <!-- Condition sur le button si le checkbox est checked -->
     <button class="btn btn-success" ng-model="button" *ngIf="marked === 'false' " [disabled]="true"> Valider </button>
     <button class="btn btn-success" ng-model="button" *ngIf="marked !== 'false' " [disabled]="false" (click)="valider()"> Valider </button>
-  </div>
+    <button class="btn btn-primary" ng-model="button" style="margin-left: 15px;" (click)="retour()"> Retour à la page connexion </button>
+</div>
 
