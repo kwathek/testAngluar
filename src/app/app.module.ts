@@ -9,6 +9,7 @@ import { LoginPage2Component } from './login-page2/login-page2.component';
 import {ScrollEventModule} from 'ngx-scroll-event';
 import {AuthGuard} from './auth.guard';
 import {AuthService} from './login/auth.service';
+import { AccueilComponent } from './accueil/accueil.component';
 const appRoutes: Routes = [
   {
     path: 'login',
@@ -26,6 +27,7 @@ const appRoutes: Routes = [
   declarations: [
     AppComponent,
     LoginPage2Component,
+    AccueilComponent,
   ],
   imports: [
     BrowserModule,
