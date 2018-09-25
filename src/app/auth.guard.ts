@@ -3,7 +3,6 @@ import { AuthService } from './login/auth.service';
 import { Injectable } from '@angular/core';
 import {Observable} from 'rxjs';
 import {CustomerService} from './login/customer.service';
-import {and} from '@angular/router/src/utils/collection';
 
 @Injectable()
 export class AuthGuard implements CanActivate {
