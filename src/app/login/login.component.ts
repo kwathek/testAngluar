@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import {ApiService} from './api.service';
 import {CustomerService} from './customer.service';
 import {Router} from '@angular/router';
+import {AuthService} from './auth.service';
 
 @Component({
   selector: 'app-login',
@@ -13,11 +14,12 @@ export class LoginComponent  {
   email = 'peter@klaven';
   password = 'cityslicka';
 
-  constructor(private api: ApiService, private customer: CustomerService, private router: Router) {
+  constructor(private api: ApiService, private customer: CustomerService, private router: Router, private authService: AuthService) {
   }
 
   tryLogin() {
     if (this.email === 'peter@klaven' && this.password === 'cityslicka') {
+      this.authService.signIn();
       this.api.login(
         this.email,
         this.password
