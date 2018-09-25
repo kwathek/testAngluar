@@ -6,7 +6,7 @@ import { LoginComponent } from './login/login.component';
 import {RouterModule, Routes} from '@angular/router';
 import {HttpClientModule} from '@angular/common/http';
 import { LoginPage2Component } from './login-page2/login-page2.component';
-
+import {ScrollEventModule} from 'ngx-scroll-event';
 const appRoutes: Routes = [
   {
     path: '',
@@ -26,6 +26,7 @@ const appRoutes: Routes = [
   imports: [
     BrowserModule,
     LoginModule,
+    ScrollEventModule,
     RouterModule.forRoot(appRoutes),
     HttpClientModule,
   ],
