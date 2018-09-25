@@ -28,7 +28,7 @@ export class LoginPage2Component implements OnInit {
   }
   // validation et navigation vers une autre page
   valider() {
-    this.router.navigateByUrl('/');
+    this.router.navigateByUrl('/Acceuil');
   }
   retour() {
     this.router.navigateByUrl('/');
