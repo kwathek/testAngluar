@@ -7,15 +7,19 @@ import {RouterModule, Routes} from '@angular/router';
 import {HttpClientModule} from '@angular/common/http';
 import { LoginPage2Component } from './login-page2/login-page2.component';
 import {ScrollEventModule} from 'ngx-scroll-event';
+import {AuthGuard} from './auth.guard';
+import {AuthService} from './login/auth.service';
 const appRoutes: Routes = [
   {
-    path: '',
+    path: 'login',
     component: LoginComponent
   },
   {
     path: 'LoginComplete',
+    canActivate: [AuthGuard],
     component: LoginPage2Component
   },
+  { path: '**', redirectTo: 'login' }
 ];
 
 @NgModule({
@@ -30,7 +34,7 @@ const appRoutes: Routes = [
     RouterModule.forRoot(appRoutes),
     HttpClientModule,
   ],
-  providers: [],
+  providers: [AuthService,AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
